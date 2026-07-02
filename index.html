@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ledger — Expense Tracker</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="wrap">
+
+    <header class="masthead">
+      <div class="eyebrow">Personal Finance / Daily Log</div>
+      <h1>Ledger</h1>
+      <p class="tagline">Every rupee, accounted for.</p>
+    </header>
+
+    <section class="totals-strip">
+      <div class="total-card total-card--main">
+        <span class="label">Total Spent</span>
+        <span class="value" id="totalAmount">₹0</span>
+      </div>
+      <div class="total-card">
+        <span class="label">Entries</span>
+        <span class="value" id="totalCount">0</span>
+      </div>
+      <div class="total-card">
+        <span class="label">Top Category</span>
+        <span class="value" id="topCategory">—</span>
+      </div>
+    </section>
+
+    <section class="entry-panel">
+      <form id="expenseForm" autocomplete="off">
+        <div class="field">
+          <label for="desc">What was it for?</label>
+          <input type="text" id="desc" placeholder="e.g. Canteen lunch" required>
+        </div>
+        <div class="field field--amount">
+          <label for="amount">Amount</label>
+          <input type="number" id="amount" placeholder="0" min="1" required>
+        </div>
+        <div class="field">
+          <label for="category">Category</label>
+          <select id="category">
+            <option>Food</option>
+            <option>Travel</option>
+            <option>Books & Stationery</option>
+            <option>Entertainment</option>
+            <option>Rent</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <button type="submit" class="add-btn">+ Add Entry</button>
+      </form>
+    </section>
+
+    <section class="breakdown">
+      <h2>Category Breakdown</h2>
+      <div id="breakdownBars" class="bars"></div>
+    </section>
+
+    <section class="log">
+      <div class="log-header">
+        <h2>Entry Log</h2>
+        <button id="clearAll" class="text-btn">Clear all</button>
+      </div>
+      <ul id="entryList" class="entry-list">
+        <li class="empty-state" id="emptyState">No entries yet. Add your first expense above — it'll show up here.</li>
+      </ul>
+    </section>
+
+  </div>
+
+<script src="script.js"></script>
+</body>
+</html>
